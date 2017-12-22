@@ -15,6 +15,7 @@ public class Stack<T> {
         num++;
     }
 
+    // NOTE: In production, you'll want to throw a specific exception on underflow
     public Node pop() {
         Node topNode = first;
         first = topNode.next;

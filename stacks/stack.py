@@ -12,6 +12,7 @@ class Stack:
         self.first = newNode
         self.num += 1
 
+    # NOTE: In production, you'll want to return an error on underflow
     def pop(self):
         topNode = self.first
         self.first = topNode.next

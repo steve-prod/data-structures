@@ -22,6 +22,7 @@ func (s *Stack) Push(value int) {
 }
 
 // Pop implements stack.Pop: removes and returns the top value from stack
+// NOTE: For use in production, you would probably want Pop to return an error on underflow
 func (s *Stack) Pop() Node {
 	n := s.first
 	s.first = n.next

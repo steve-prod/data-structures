@@ -8,7 +8,6 @@
 var stackObjLiteral = {
     first: null,
     num: 0,
-    context: this,
     push: function(value) {
         var that = this;
         var nodeLiteral = {
@@ -18,6 +17,7 @@ var stackObjLiteral = {
         that.first = nodeLiteral;
         that.num++;
     },
+    // NOTE: In production, you'll want to return an error on underflow
     pop: function() {
         var topNode = this.first;
         this.first = topNode.next;
@@ -68,6 +68,7 @@ StackFunction.prototype = {
         that.first = node;
         that.num++;
     },
+    // NOTE: In production, you'll want to return an error on underflow
     pop: function() {
         var topNode = this.first;
         this.first = topNode.next;
@@ -114,6 +115,7 @@ var stackPrototype = {
         this.first = node;
         this.num++;
     },
+    // NOTE: In production, you'll want to return an error on underflow
     pop: function() {
         topNode = this.first;
         this.first = topNode.next;
@@ -165,6 +167,7 @@ class StackClass {
         this.first = node;
         this.num++;
     }
+    // NOTE: In production, you'll want to return an error on underflow
     pop() {
         var node = this.first;
         this.first = node.next;
