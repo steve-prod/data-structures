@@ -1,16 +1,18 @@
 def insertion_sort(array):
     i, j = 0, 0
+    isSmallest = True
     for i in range(1, len(array)):
         temp = array[i]
+        isSmallest = True
         for j in range(i - 1, -1, -1):
             if array[j] > temp:
                 array[j + 1] = array[j]
             else:
                 array[j+1] = temp
+                isSmallest = False
                 break
-        else:
+        if isSmallest:
             array[j] = temp
-
 
 
 array1 = [8, 3, 5, 9, 1, 2, 7]

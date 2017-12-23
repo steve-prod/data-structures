@@ -19,21 +19,15 @@ func main() {
 
 func insertionSort(array []int) {
 	var temp, i, j int
-	var isSmallest bool
 	for i = 1; i < len(array); i++ {
 		temp = array[i]
-		isSmallest = true
 		for j = i - 1; j >= 0; j-- {
 			if array[j] > temp {
 				array[j+1] = array[j]
 			} else {
-				array[j+1] = temp
-				isSmallest = false
 				break
 			}
 		}
-		if isSmallest {
-			array[j+1] = temp
-		}
+		array[j+1] = temp
 	}
 }
